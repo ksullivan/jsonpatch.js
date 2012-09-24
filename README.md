@@ -1,3 +1,20 @@
+This fork adds a small feature which allows you to easily add an element to the end of an array:
+
+```javascript
+// Patching the object
+{ array: ['one', 'two', 'three'] }
+// with the patch
+[{ add: '/array/!', value: 'four' }]
+// gives you
+{ array: ['one', 'two', 'three', 'four'] }
+```   
+
+Note that this functionality is not in the JSON Patch specification.
+
+- - -
+- - -
+- - -
+
 UPDATE: JSON Patch draft 4 has just been released which contains two new operations (move and test). This library will be updated to support them shortly.
 
 JSONPatch

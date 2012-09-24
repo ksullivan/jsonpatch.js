@@ -71,6 +71,16 @@ describe('JSONPointer', function () {
     it('should should succeed if replacing the root in undefined ', function () {
       expect(add('',undefined,'test')).toEqual('test');
     });
+
+    it('should add an element to the end of an array if the index is specified as !', function () {
+      example = add('/foo/anArray/!',example,'test');
+      expect(example.foo.anArray.length).toEqual(4);
+      expect(example.foo.anArray[3]).toEqual('test');
+
+      example = add('/foo/anArray/!',example,'test2');
+      expect(example.foo.anArray.length).toEqual(5);
+      expect(example.foo.anArray[4]).toEqual('test2');
+    });
   });
   
   describe('.remove()', function () {
